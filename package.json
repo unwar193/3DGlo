@@ -7,7 +7,7 @@
     "build": "webpack",
     "watch": "webpack --watch"
   },
-  "author": "Milessa Croitor",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^5.64.0",
