@@ -1,51 +1,37 @@
 "use strict";
 
+import { animate } from "./helpers.js";
+
 const modal = () => {
   const popup = document.querySelector(".popup"),
     popupBtn = document.querySelectorAll(".popup-btn"),
-    popupContent = popup.querySelector(".popup-content"),
-    popupData = {
-      count: -450,
-      speed: 10,
-      startPos: -450,
-      endPos: 0,
-    };
+    popupContent = popup.querySelector(".popup-content")
 
   popupBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       popup.style.display = "block";
       if (screen.width > 768) {
-        popupData.count = popupData.startPos;
-        requestAnimationFrame(showPopup);
+        animate({
+          duration: 400,
+          timing(timeFraction) {
+              return Math.pow(timeFraction, 3)
+          },
+          draw(progress) {
+            popupContent.style.top = 25 * progress  + '%';
+          },
+        });
       }
     });
   });
 
-  const showPopup = () => {
-    popupData.startPos > popupData.endPos
-      ? (popupData.count -= popupData.speed)
-      : (popupData.count += popupData.speed);
-    popupContent.style.transform = `translateY(${popupData.count}px)`;
-
+  popup.addEventListener("click", (e) => {
     if (
-      popupData.startPos > popupData.endPos
-        ? popupData.count > popupData.endPos
-        : popupData.count < popupData.endPos
+      !e.target.closest(".popup-content") ||
+      e.target.classList.contains("popup-close")
     ) {
-      requestAnimationFrame(showPopup);
+      popup.style.display = "none";
     }
-  };
-
-
-
-  popup.addEventListener('click', (e) => {
-    // console.log(e.target.closest('.popup-content'));
-    if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
-      popup.style.display = 'none'
-    }
-    
   });
-
 };
 
 export default modal;

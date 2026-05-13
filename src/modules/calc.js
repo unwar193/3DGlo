@@ -27,14 +27,7 @@ const calc = (price = 100) => {
     }
 
     if (calcSquareValue && calcSquareValue) {
-      console.log(price * calcTypeValue * calcSquareValue);
-      console.log(price * calcTypeValue * calcSquareValue * calcCountValue);
-      console.log(
-        price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue,
-      );
-
-      totalValue =
-        price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue;
+      totalValue = price * calcTypeValue * calcSquareValue * calcCountValue * calcDayValue;
     } else {
       totalValue = 0;
     }
