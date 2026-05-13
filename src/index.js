@@ -8,9 +8,9 @@ import tabs from "./modules/tabs.js";
 import slider from "./modules/slider.js";
 
 timer('2026-11-20');
-// menu();
+menu();
 modal();
-// scroll();
+scroll();
 calcValidation();
 formsValidation();
 tabs();
