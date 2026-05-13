@@ -16,12 +16,6 @@ const calcValidation = () => {
       }
     });
   });
-
-  calcBlock.addEventListener("change", () => {
-    let sum = 0;
-    sum = +calcCount.value + +calcDay.value + +calcSquare.value;
-    totalValue.textContent = sum;
-  });
 };
 
 export default calcValidation;

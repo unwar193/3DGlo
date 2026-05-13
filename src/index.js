@@ -6,6 +6,7 @@ import calcValidation from "./modules/calcValidation.js";
 import formsValidation from "./modules/formsValidation.js";
 import tabs from "./modules/tabs.js";
 import slider from "./modules/slider.js";
+import calc from "./modules/calc.js";
 
 timer('2026-11-20');
 menu();
@@ -15,4 +16,4 @@ calcValidation();
 formsValidation();
 tabs();
 slider();
-
+calc();
