@@ -7,7 +7,7 @@ import formsValidation from "./modules/formsValidation.js";
 import tabs from "./modules/tabs.js";
 import slider from "./modules/slider.js";
 import calc from "./modules/calc.js";
-
+import sendForm from "./modules/sendForm.js";
 
 timer('2026-11-20');
 menu();
@@ -18,4 +18,4 @@ formsValidation();
 tabs();
 slider();
 calc();
-
+sendForm();

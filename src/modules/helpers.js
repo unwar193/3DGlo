@@ -25,16 +25,30 @@ const animate = ({ timing, draw, duration }) => {
   });
 };
 
-/*//  ВЫЗОВ ФУНКЦИИ 'animate':
-animate({
-  duration: 1000,
-  timing(timeFraction) {
-    return timeFraction;
-  },
-  draw(progress) {
-    elem.style.width = progress * 100 + "%";
-  },
-});
-*/
+// /*//  ВЫЗОВ ФУНКЦИИ 'animate':
+// animate({
+//   duration: 1000,
+//   timing(timeFraction) {
+//     return timeFraction;
+//   },
+//   draw(progress) {
+//     elem.style.width = progress * 100 + "%";
+//   },
+// });
+// */
 
-export { slicer, animate };
+const blockBody = () => {
+  const body = document.body;
+  body.style.overflow = "hidden";
+  const bodyScroll = calcScroll();
+  body.style.marginRight = `${bodyScroll}px`;
+};
+
+const unBlockBody = () => {
+  const body = document.body;
+  body.style.overflow = "auto";
+  body.style.marginRight = `0`;
+};
+
+
+export { slicer, animate, blockBody, unBlockBody };

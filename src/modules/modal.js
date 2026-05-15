@@ -1,6 +1,6 @@
 "use strict";
 
-import { animate } from "./helpers.js";
+import { animate , blockBody , unBlockBody} from "./helpers.js";
 
 const modal = () => {
   const popup = document.querySelector(".popup"),
@@ -18,6 +18,7 @@ const modal = () => {
           },
           draw(progress) {
             popupContent.style.top = 25 * progress  + '%';
+            blockBody();
           },
         });
       }
@@ -30,6 +31,7 @@ const modal = () => {
       e.target.classList.contains("popup-close")
     ) {
       popup.style.display = "none";
+      unBlockBody();
     }
   });
 };
